@@ -10,7 +10,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="myModalLabel">Регистрация</h4>
             </div>
-            <form role="form">
+            <form role="form" method="post" action="{{route('signup')}}">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="exampleInputName1">Имя</label>
@@ -21,14 +21,14 @@
                         <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Введите email">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Пароль
+                        <label for="exampleInputPassword">Пароль
                         </label>
-                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword" placeholder="Пароль">
                         <span class="help-block">минимум 6 символов</span>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword2">Пароль еще раз</label>
-                        <input type="password" name="password2" class="form-control" id="exampleInputPassword2" placeholder="Пароль">
+                        <label for="exampleInputPassword1">Пароль еще раз</label>
+                        <input type="password" name="password1" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
                     </div>
                     <div class="checkbox">
                         <label>
@@ -41,6 +41,7 @@
                     <button type="submit" class="btn btn-default">Регистрация</button>
                     <p class="text-center">Регистрируясь, я подтверждаю своё согласие с условиями пользовательского
                         соглашения</p>
+                    <input type="hidden" name="_token" value="{{Session::token()}}">
                 </div>
             </form>
         </div>

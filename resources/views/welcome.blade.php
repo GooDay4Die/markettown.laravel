@@ -7,6 +7,7 @@
 @section('content')
 
     <div class="container">
+        @include('includes.message-block')
         <div class="rows">
             <div class="col-md-2">
                 Левое меню

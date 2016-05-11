@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/signup', [
+    'uses' => 'UserController@postSignUp',
+    'as' => 'signup'
+]);
+Route::get('/ok', function () {
+    return 'ok';
+})->name('ok');
